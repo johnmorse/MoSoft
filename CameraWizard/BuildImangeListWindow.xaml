@@ -1,0 +1,43 @@
+﻿<Window
+  x:Class="CameraWizard.BuildImangeListWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="clr-namespace:CameraWizard"
+  Title="Searching Camera"
+  SizeToContent="WidthAndHeight"
+  ResizeMode="NoResize" Icon="slr_camera.ico"
+  >
+  <Window.DataContext>
+    <local:BuildingImageListViewModel/>
+  </Window.DataContext>
+  <Grid
+    Margin="20"
+    >
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="10"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Image
+      Width="100"
+      Height="100"
+      Stretch="None"
+      Source="{Binding Path=PreviewImage}"
+      />
+    <TextBlock
+      Grid.Row="1"
+      HorizontalAlignment="Center"
+      Text="{Binding Path=ItemText}"
+      />
+    <Button
+      Grid.Row="3"
+      HorizontalAlignment="Center"
+      Content="Cancel"
+      Width="100"
+      Click="CancelButtonClick"
+      IsDefault="True"
+      IsCancel="True"
+      />
+  </Grid>
+</Window>
