@@ -1,6 +1,6 @@
 ﻿using WIA;
 
-namespace CameraWizard
+namespace CameraWizard.ViewModels
 {
   public class Camera : NotifyPropertyChanged
   {

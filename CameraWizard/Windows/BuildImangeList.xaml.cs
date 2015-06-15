@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows;
+using CameraWizard.ViewModels;
 using WIA;
 
-namespace CameraWizard
+namespace CameraWizard.Windows
 {
   /// <summary>
   /// Interaction logic for BuildImangeListWindow.xaml
@@ -33,6 +34,6 @@ namespace CameraWizard
       get { return (ViewModel == null ? null : ViewModel.Device); }
       set { if (ViewModel != null) ViewModel.Device = value; }
     }
-    BuildingImageListViewModel ViewModel { get { return DataContext as BuildingImageListViewModel; } }
+    BuildingImageList ViewModel { get { return DataContext as BuildingImageList; } }
   }
 }

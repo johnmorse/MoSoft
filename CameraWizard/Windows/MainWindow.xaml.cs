@@ -1,6 +1,7 @@
 ﻿using System.Windows;
+using CameraWizard.ViewModels;
 
-namespace CameraWizard
+namespace CameraWizard.Windows
 {
   /// <summary>
   /// Interaction logic for MainWindow.xaml

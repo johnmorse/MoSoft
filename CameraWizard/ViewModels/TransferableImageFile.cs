@@ -3,7 +3,7 @@ using System.IO;
 using System.Windows.Media.Imaging;
 using WIA;
 
-namespace CameraWizard
+namespace CameraWizard.ViewModels
 {
   class TransferableImageFile : NotifyPropertyChanged
   {

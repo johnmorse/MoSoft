@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows;
+using CameraWizard.ViewModels;
 using WIA;
 
-namespace CameraWizard
+namespace CameraWizard.Windows
 {
   /// <summary>
   /// Interaction logic for ConnectToCameraWindow.xaml
@@ -19,8 +20,8 @@ namespace CameraWizard
       base.OnContentRendered(e);
       if (!m_connect_to_camera) return;
       m_connect_to_camera = false;
-      var model = DataContext as ConnectToCameraViewModel;
-      if (model != null) model.ConnectToCamera(this);
+      var model = DataContext as ConnectToCamera;
+      if (model != null) model.Connect(this);
     }
 
     private bool m_connect_to_camera = true;
@@ -51,12 +52,11 @@ namespace CameraWizard
       }
     }
 
-    ConnectToCameraViewModel ViewModel { get { return DataContext as ConnectToCameraViewModel; } }
-
     private void CancelButtonClick(object sender, RoutedEventArgs e)
     {
-      var model = DataContext as ConnectToCameraViewModel;
-      if (model != null) model.Cancel(this);
+      if (ViewModel != null) ViewModel.Cancel(this);
     }
+
+    ConnectToCamera ViewModel { get { return DataContext as ConnectToCamera; } }
   }
 }

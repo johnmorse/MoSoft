@@ -6,9 +6,9 @@ using System.Windows;
 using System.Windows.Media.Imaging;
 using WIA;
 
-namespace CameraWizard
+namespace CameraWizard.ViewModels
 {
-  class BuildingImageListViewModel : NotifyPropertyChanged
+  class BuildingImageList : NotifyPropertyChanged
   {
     public async void Start(Window window)
     {

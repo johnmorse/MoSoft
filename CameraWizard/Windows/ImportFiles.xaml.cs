@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Windows;
+using CameraWizard.ViewModels;
 using WIA;
 
-namespace CameraWizard
+namespace CameraWizard.Windows
 {
   /// <summary>
   /// Interaction logic for ImportFilesWindow.xaml
@@ -29,25 +30,25 @@ namespace CameraWizard
       if (ViewModel != null) ViewModel.Cancel(this);
     }
 
-    internal ImportFilesViewModel.WriteFileFunction FileWriter
+    internal ImportFiles.WriteFileFunction FileWriter
     {
       get { return (ViewModel == null ? null : ViewModel.FileWriter); }
       set { if (ViewModel != null) ViewModel.FileWriter = value; }
     }
 
-    internal ImportFilesViewModel.DeleteFileFunction DeleteFile
+    internal ImportFiles.DeleteFileFunction DeleteFile
     {
       get { return (ViewModel == null ? null : ViewModel.DeleteFile); }
       set { if (ViewModel != null) ViewModel.DeleteFile = value; }
     }
 
-    internal ImportFilesViewModel.WriteFileFunction FileDeleted
+    internal ImportFiles.WriteFileFunction FileDeleted
     {
       get { return (ViewModel == null ? null : ViewModel.FileDeleted); }
       set { if (ViewModel != null) ViewModel.FileDeleted = value; }
     }
 
-    internal ImportFilesViewModel.FilesToDeleteFunction FilesToDelete
+    internal ImportFiles.FilesToDeleteFunction FilesToDelete
     {
       get { return (ViewModel == null ? null : ViewModel.FilesToDelete); }
       set { if (ViewModel != null) ViewModel.FilesToDelete = value; }
@@ -64,6 +65,7 @@ namespace CameraWizard
       get { return (ViewModel == null ? null : ViewModel.ImageCollection); }
       set { if (ViewModel != null) ViewModel.ImageCollection = value; }
     }
-    ImportFilesViewModel ViewModel { get { return DataContext as ImportFilesViewModel; } }
+
+    ImportFiles ViewModel { get { return DataContext as ImportFiles; } }
   }
 }

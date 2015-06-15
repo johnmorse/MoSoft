@@ -7,9 +7,9 @@ using System.Windows;
 using System.Windows.Media.Imaging;
 using WIA;
 
-namespace CameraWizard
+namespace CameraWizard.ViewModels
 {
-  class ImportFilesViewModel : NotifyPropertyChanged
+  class ImportFiles : NotifyPropertyChanged
   {
     public async void Start(Window window)
     {

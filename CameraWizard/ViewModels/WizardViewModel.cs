@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.IO;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
+using CameraWizard.Windows;
 using WIA;
 
 // https://wiadotnet.codeplex.com/
 // http://www.codeproject.com/Articles/30726/Transferring-D-images-with-WIA
 
-namespace CameraWizard
+namespace CameraWizard.ViewModels
 {
   class WizardViewModel : NotifyPropertyChanged
   {
@@ -590,7 +591,7 @@ namespace CameraWizard
       try
       {
         // Display a progress window and write the files
-        var window = new ImportFilesWindow
+        var window = new Windows.ImportFilesWindow
         {
           ImageCollection = ImageCollection,
           FileWriter = WriteFile,

@@ -1,17 +1,14 @@
 ﻿<Window
-  x:Class="CameraWizard.ImportFilesWindow"
+  x:Class="CameraWizard.Windows.BuildImangeListWindow"
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-  xmlns:local="clr-namespace:CameraWizard"
-  Title="{Binding Path=Title}"
+  xmlns:local="clr-namespace:CameraWizard.ViewModels"
+  Title="Searching Camera"
   SizeToContent="WidthAndHeight"
-  ResizeMode="NoResize"
-  Icon="slr_camera.ico"
-  ShowInTaskbar="False"
-  WindowStartupLocation="CenterOwner"
+  ResizeMode="NoResize" Icon="slr_camera.ico"
   >
   <Window.DataContext>
-    <local:ImportFilesViewModel/>
+    <local:BuildingImageList/>
   </Window.DataContext>
   <Grid
     Margin="20"

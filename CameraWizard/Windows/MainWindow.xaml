@@ -1,15 +1,16 @@
 ﻿<Window
-  x:Class="CameraWizard.MainWindow"
+  x:Class="CameraWizard.Windows.MainWindow"
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-  xmlns:local="clr-namespace:CameraWizard"
   Title="Camera Wizard"
+  xmlns:local="clr-namespace:CameraWizard.ViewModels"
   ResizeMode="CanResizeWithGrip"
   MinHeight="250"
   Height="350"
   MinWidth="395"
   Width="395"
-  Closing="WindowClosing" Icon="Assets/slr_camera.ico"
+  Closing="WindowClosing"
+  Icon="/CameraWizard;component/Assets/slr_camera.ico"
   >
   <Window.DataContext>
     <local:WizardViewModel/>
@@ -143,11 +144,11 @@
                 Content="{Binding Path=Name}"
                 IsChecked="{Binding Path=Include}"
                 />
-              <!--<Rectangle
+              <Rectangle
                 Height="32"
                 Width="32"
                 Fill="Blue"
-                />-->
+                />
             </StackPanel>
           </DataTemplate>
         </ListView.ItemTemplate>

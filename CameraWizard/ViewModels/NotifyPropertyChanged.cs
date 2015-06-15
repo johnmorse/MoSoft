@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace CameraWizard
+namespace CameraWizard.ViewModels
 {
   public class NotifyPropertyChanged : INotifyPropertyChanged
   {

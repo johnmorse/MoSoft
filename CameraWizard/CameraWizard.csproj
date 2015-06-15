@@ -57,48 +57,47 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BuildImangeListWindow.xaml.cs">
-      <DependentUpon>BuildImangeListWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="BuildingImageListViewModel.cs" />
-    <Compile Include="Camera.cs" />
-    <Compile Include="ConnectToCameraViewModel.cs" />
-    <Compile Include="ConnectToCameraWindow.xaml.cs">
-      <DependentUpon>ConnectToCameraWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ImportFilesViewModel.cs" />
-    <Compile Include="ImportFilesWindow.xaml.cs">
-      <DependentUpon>ImportFilesWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NotifyPropertyChanged.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="TransferableImageFile.cs" />
+    <Compile Include="ViewModels\BuildingImageList.cs" />
+    <Compile Include="ViewModels\Camera.cs" />
+    <Compile Include="ViewModels\ConnectToCamera.cs" />
+    <Compile Include="ViewModels\ImportFiles.cs" />
+    <Compile Include="ViewModels\NotifyPropertyChanged.cs" />
+    <Compile Include="ViewModels\TransferableImageFile.cs" />
+    <Compile Include="ViewModels\WizardViewModel.cs" />
     <Compile Include="WiaHelper.cs" />
-    <Compile Include="WizardViewModel.cs" />
-    <Page Include="BuildImangeListWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ConnectToCameraWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ImportFilesWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Compile Include="Windows\BuildImangeList.xaml.cs">
+      <DependentUpon>BuildImangeList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ConnectToCamera.xaml.cs">
+      <DependentUpon>ConnectToCamera.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ImportFiles.xaml.cs">
+      <DependentUpon>ImportFiles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Page Include="Windows\BuildImangeList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\ConnectToCamera.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\ImportFiles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
