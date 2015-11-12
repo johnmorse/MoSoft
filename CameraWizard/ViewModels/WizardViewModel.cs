@@ -78,7 +78,11 @@ namespace CameraWizard.ViewModels
             // It is a camera so add it to our device collection if it is not
             // already there.
             if (FromCameraCollection(deviceId) == null)
+            {
               CameraCollection.Add(new Camera(device_info));
+              if (CameraCollection.Count == 1)
+                SelectedDevice = CameraCollection[0];
+            }
           }
           break;
         // A device was disconnected
@@ -111,6 +115,8 @@ namespace CameraWizard.ViewModels
       CameraCollection.Clear();
       foreach (var device in m_device_manager.DeviceInfos.Cast<DeviceInfo>().Where(device => device.Type == WiaDeviceType.CameraDeviceType))
         CameraCollection.Add(new Camera(device));
+      if (CameraCollection.Count > 0)
+        SelectedDevice = CameraCollection[0];
     }
     /// <summary>
     /// Lookup a camera Id in the camera collection
@@ -591,7 +597,7 @@ namespace CameraWizard.ViewModels
       try
       {
         // Display a progress window and write the files
-        var window = new Windows.ImportFilesWindow
+        var window = new ImportFilesWindow
         {
           ImageCollection = ImageCollection,
           FileWriter = WriteFile,
@@ -605,6 +611,8 @@ namespace CameraWizard.ViewModels
           window.FilesToDelete = () => m_files_to_delete;
         }
         window.ShowDialog();
+        if (Directory.Exists(m_input_folder))
+          System.Diagnostics.Process.Start(m_input_folder);
       }
       catch (Exception e)
       {

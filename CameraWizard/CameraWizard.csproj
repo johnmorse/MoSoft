@@ -75,6 +75,9 @@
     <Compile Include="Windows\ImportFiles.xaml.cs">
       <DependentUpon>ImportFiles.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ImportOptions.xaml.cs">
+      <DependentUpon>ImportOptions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -93,6 +96,10 @@
     <Page Include="Windows\ImportFiles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\ImportOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

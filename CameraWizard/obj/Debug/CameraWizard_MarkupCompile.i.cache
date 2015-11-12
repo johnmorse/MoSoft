@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\dev\github\MoSoft\CameraWizard\App.xaml
-41250182222
+51685463942
 
-212050534016
+222013012291
 141944062341
-Windows\BuildImangeList.xaml;Windows\ConnectToCamera.xaml;Windows\ImportFiles.xaml;Windows\MainWindow.xaml;
+Windows\BuildImangeList.xaml;Windows\ConnectToCamera.xaml;Windows\ImportFiles.xaml;Windows\ImportOptions.xaml;Windows\MainWindow.xaml;
 
-True
+False
 

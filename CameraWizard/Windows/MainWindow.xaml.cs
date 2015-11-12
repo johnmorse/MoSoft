@@ -33,7 +33,14 @@ namespace CameraWizard.Windows
 
     private void ImportButtonClick(object sender, RoutedEventArgs e)
     {
-      if (ViewModel != null) ViewModel.ImportPhotos();
+      if (ViewModel == null) return;
+      //var window = new ImportOptions();
+      //window.Owner = this;
+      //window.ShowDialog();
+      //if (window.DialogResult != true)
+      //  return;
+      //ViewModel.Description = window.Description;
+      ViewModel.ImportPhotos();
     }
 
     private void CancelButtonClick(object sender, RoutedEventArgs e)

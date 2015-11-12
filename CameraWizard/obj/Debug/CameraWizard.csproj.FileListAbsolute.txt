@@ -21,3 +21,6 @@ C:\dev\github\MoSoft\CameraWizard\obj\Debug\Windows\ImportFiles.g.cs
 C:\dev\github\MoSoft\CameraWizard\obj\Debug\Windows\BuildImangeList.baml
 C:\dev\github\MoSoft\CameraWizard\obj\Debug\Windows\ConnectToCamera.baml
 C:\dev\github\MoSoft\CameraWizard\obj\Debug\Windows\ImportFiles.baml
+C:\dev\github\MoSoft\CameraWizard\obj\Debug\CameraWizard.csprojResolveAssemblyReference.cache
+C:\dev\github\MoSoft\CameraWizard\obj\Debug\Windows\ImportOptions.baml
+C:\dev\github\MoSoft\CameraWizard\obj\Debug\Windows\ImportOptions.g.cs
