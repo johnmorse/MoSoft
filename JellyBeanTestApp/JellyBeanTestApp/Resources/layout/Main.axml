@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerReceivers" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <Button
+            android:text="Watch TV On"
+            android:id="@+id/buttonWatchTVOn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <Button
+            android:text="Watch TV Off"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/buttonWatchTVOff" />
+    </LinearLayout>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridLayout1"
+        android:rowCount="9"
+        android:columnCount="3">
+        <Button
+            android:text="On"
+            android:id="@+id/buttonPowerOn"
+            android:layout_width="75.0dp"
+            android:layout_height="match_parent" />
+        <Button
+            android:text="Off"
+            android:id="@+id/buttonOff"
+            android:layout_width="75.0dp"
+            android:layout_height="match_parent" />
+        <Button
+            android:text="Load"
+            android:id="@+id/buttonLoad"
+            android:layout_width="75.0dp"
+            android:layout_height="match_parent" />
+        <Button
+            android:id="@+id/buttonGuide"
+            android:text="Guide"
+            android:layout_width="75.0dp"
+            android:layout_height="match_parent" />
+        <Button
+            android:text="Menu"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonMenu" />
+        <Button
+            android:text="List"
+            android:id="@+id/buttonList"
+            android:layout_width="75.0dp"
+            android:layout_height="match_parent" />
+        <Button
+            android:text="Rec"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonRecord" />
+        <Button
+            android:text="^"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonUpArrow" />
+        <Button
+            android:text="Exit"
+            android:id="@+id/buttonExit"
+            android:layout_width="75.0dp"
+            android:layout_height="match_parent" />
+        <Button
+            android:text="&lt;"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonLeftArrow" />
+        <Button
+            android:text="Select"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonSelect" />
+        <Button
+            android:text="&gt;"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonRightArrow" />
+        <Button
+            android:id="@+id/buttonRed"
+            android:layout_width="75.0dp"
+            android:background="#ffff0000" />
+        <Button
+            android:text="^"
+            android:id="@+id/buttonDownArrow"
+            android:layout_width="75.0dp" />
+        <Button
+            android:text="Info"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonInfo" />
+        <Button
+            android:text="ReW"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonRew" />
+        <Button
+            android:text="Play"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonPlay" />
+        <Button
+            android:text="FF"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonFF" />
+        <Button
+            android:text="-30"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonMinus30" />
+        <Button
+            android:text="Stop"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonStop" />
+        <Button
+            android:text="+30"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonPlus30" />
+        <Button
+            android:text="Pause"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonPause" />
+        <Button
+            android:text="Chn+"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonChanUp" />
+        <Button
+            android:text="Chn-"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonChanDown" />
+        <Button
+            android:text="Prev"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonPrevious" />
+        <Button
+            android:text="TV On"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonTvOn" />
+        <Button
+            android:text="TVOff"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonTvOff" />
+    </GridLayout>
+    <GridLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:rowCount="4"
+        android:columnCount="3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridLayout2">
+        <Button
+            android:text="1"
+            android:layout_width="75.0dp"
+            android:id="@+id/button1" />
+        <Button
+            android:text="2"
+            android:layout_width="75.0dp"
+            android:id="@+id/button2" />
+        <Button
+            android:text="3"
+            android:layout_width="75.0dp"
+            android:id="@+id/button3" />
+        <Button
+            android:text="4"
+            android:layout_width="75.0dp"
+            android:id="@+id/button4" />
+        <Button
+            android:text="5"
+            android:layout_width="75.0dp"
+            android:id="@+id/button5" />
+        <Button
+            android:text="6"
+            android:layout_width="75.0dp"
+            android:id="@+id/button6" />
+        <Button
+            android:text="7"
+            android:layout_width="75.0dp"
+            android:id="@+id/button7" />
+        <Button
+            android:text="8"
+            android:layout_width="75.0dp"
+            android:id="@+id/button8" />
+        <Button
+            android:text="9"
+            android:layout_width="75.0dp"
+            android:id="@+id/button9" />
+        <Button
+            android:text="-"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonDash" />
+        <Button
+            android:text="0"
+            android:layout_width="75.0dp"
+            android:id="@+id/button0" />
+        <Button
+            android:text="Enter"
+            android:layout_width="75.0dp"
+            android:id="@+id/buttonEnter" />
+    </GridLayout>
+</LinearLayout>
