@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <RootNamespace>OhHell</RootNamespace>
+    <PackageVersion>1.0</PackageVersion>
+    <Title>OhHell</Title>
+    <Copyright>Copyright © 2018</Copyright>
+    <Description>Description of OhHell</Description>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Eto.Forms" Version="2.4.1" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Core\" />
+    <Folder Include="Commands\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\Resources\Ace.png">
+      <Link>Resources\Ace.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Resources\Ace64.png">
+      <Link>Resources\Ace64.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Resources\Minus.png">
+      <Link>Resources\Minus.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Resources\NextArrow.png">
+      <Link>Resources\NextArrow.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Resources\Plus.png">
+      <Link>Resources\Plus.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Resources\PrevArrow.png">
+      <Link>Resources\PrevArrow.png</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Resources\History.png">
+      <Link>Resources\History.png</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
