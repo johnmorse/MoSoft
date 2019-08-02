@@ -1,0 +1,77 @@
+
+This does not work...
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+http:
+  server_port: 8123
+  base_url: https://morsehousehassio.local
+  
+  
+  
+secrets.yaml
+
+# Use this file to store secrets like usernames and passwords.
+# Learn more at https://home-assistant.io/docs/configuration/secrets/
+
+logger: debug
+
+http_password: Wg99Ml66HomeAssist
+http_my_url: https:\\morse.family.home.assistant
+arlo_username: john@morse-family.org
+arlo_password: Wg99Ml66Arlo
+
+
+media_player:
+# Yamaha RX-A860
+  - platform: yamaha
+    host: 192.168.1.254
+    name: "Yamaha Amp"
+    source_names:
+      HDMI1: "BD Player"
+      HDMI2: "Set Top Box"
+      HDMI3: "DIRECTV GENIE"
+      HDMI4: "Fire TV Cube"
+    zone_names:
+      Main_Zone: "Family Room"      
+# Samsung 65" 9 Series in Master Bedroom
+  - platform: samsungtv
+    host: 192.168.1.53
+    port: 8001
+    mac: C0:97:27:05:58:6C
+    name: "Bedroom TV"
+# Samsung Q8 Series (75)
+  - platform: samsungtv
+    host: 192.168.1.66
+    port: 8001
+    mac: 64:1C:AE:63:AA:C6
+    name: "Family Room TV"
+
+# TV Software Version (T-KM2AKUC-1260.8)
+# Controller Version (2.B07.07115)
+
+arlo:
+  username: john@morse-family.org
+  password: Wg99Ml66Arlo
+
+
+From https://github.com/smarthomeuni/homeassistant-config
+
+# Config
+
+switch: !include config/switches.yaml
+sensor: !include config/sensors.yaml
+binary_sensor: !include config/binary_sensors.yaml
