@@ -31,6 +31,14 @@
       }
       writer.WriteEndElement();
     }
+    public void UpdateStats(Bid bid)
+    {
+      BidTotal += bid.Value;
+      if (bid.Set)
+        SetCount++;
+      else
+        PointsFromTricks += bid.Value * 2;
+    }
     public string Name { get; }
     public Bid[] Bids { get; }
     public int Score
@@ -55,5 +63,38 @@
     }
     private int _ranking;
     public string RankingText => Ranking > 0 ? $"{Ranking}" : "Unranked";
+    public int SetCount
+    {
+      get => _setCount;
+      set
+      {
+        if (value < 0)
+          return;
+        SetProperty(value, ref _setCount);
+      }
+    }
+    private int _setCount;
+    public int BidTotal
+    {
+      get => _bidTotal;
+      set
+      {
+        if (value < 0)
+          return;
+        SetProperty(value, ref _bidTotal);
+      }
+    }
+    private int _bidTotal;
+    public int PointsFromTricks
+    {
+      get => _pointsFromTricks;
+      set
+      {
+        if (value < 0)
+          return;
+        SetProperty(value, ref _pointsFromTricks);
+      }
+    }
+    private int _pointsFromTricks;
   }
 }

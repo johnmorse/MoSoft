@@ -11,9 +11,7 @@ namespace OhHell.Controls
       Border = BorderType.None;
       Padding = 0;
 
-      RankLabels = new PlayerRankLabel[game.Players.Length];
-      Players = new PlayerLabel[game.Players.Length];
-      Scores = new PlayerScoreLabel[game.Players.Length];
+      StatControls = new PlayerStats[game.Players.Length];
 
       Content = new TableLayout
       {
@@ -51,16 +49,24 @@ namespace OhHell.Controls
         Padding = 0,
         Spacing = new Size(ControlUtilities.Spacing.Width * 2, ControlUtilities.Spacing.Height)
       };
-      table.Rows.Add(new TableRow(new Label { Text = "Rank" }, new Label { Text = "Player" }, new Label { Text = "Score" }));
+      table.Rows.Add(new TableRow(
+        new Label { Text = "Rank" },
+        new Label { Text = "Player" }, 
+        new Label { Text = "Score" },
+        new Label { Text = "Times set" },
+        new Label { Text = "Total bid" },
+        new Label { Text = "Points from tricks" }));
       for (var i = 0; i < game.Players.Length; i++)
       {
-        RankLabels[i] = new PlayerRankLabel();
-        Players[i] = new PlayerLabel();
-        Scores[i] = new PlayerScoreLabel();
+        var control = new PlayerStats();
+        StatControls[i] = control;
         table.Rows.Add(new TableRow(
-          RankLabels[i],
-          Players[i],
-          Scores[i],
+          control.Rank,
+          control.Name,
+          control.Score,
+          control.Set,
+          control.Bid,
+          control.Tricks,
           null
         ));
       }
@@ -74,11 +80,37 @@ namespace OhHell.Controls
       var rankings = game?.Rankings ?? Game?.Rankings;
       if (rankings != null)
         for (var i = 0; i < rankings.Length; i++)
-          RankLabels[i].DataContext = Players[i].DataContext = Scores[i].DataContext = rankings[i];
+          StatControls[i].DataContext(rankings[i]);
     }
 
-    PlayerRankLabel[] RankLabels { get; }
-    PlayerLabel[] Players { get; }
-    PlayerScoreLabel[] Scores { get; }
+    class PlayerStats
+    {
+      public PlayerStats()
+      {
+        Rank.TextAlignment = 
+        Score.TextAlignment = 
+        Bid.TextAlignment = 
+        Set.TextAlignment = 
+        Tricks.TextAlignment = 
+          TextAlignment.Center;
+      }
+      public void DataContext(Player player)
+      {
+        Rank.DataContext = 
+        Name.DataContext = 
+        Score.DataContext = 
+        Bid.DataContext = 
+        Set.DataContext =
+        Tricks.DataContext =
+          player;
+      }
+      public PlayerRankLabel Rank { get; } = new PlayerRankLabel();
+      public PlayerLabel Name { get; } = new PlayerLabel();
+      public PlayerScoreLabel Score { get; } = new PlayerScoreLabel();
+      public PlayerStatLabel Bid { get; } = new PlayerStatLabel(PlayerStatLabelType.BidTotal);
+      public PlayerStatLabel Set { get; } = new PlayerStatLabel(PlayerStatLabelType.SetCount);
+      public PlayerStatLabel Tricks { get; } = new PlayerStatLabel(PlayerStatLabelType.PointsFromTricks);
+    }
+    PlayerStats[] StatControls { get; }
   }
 }

@@ -450,6 +450,7 @@ namespace OhHell.Core
       {
         var bid = player.Bids[Round];
         bid.Score = player.Score += bid.CalculateScore();
+        player.UpdateStats(bid);
         bid.ScoreIsEmpty = false;
         bid.ScoreTextColor = bid.Set ? SetColor : SuccessColor;
         if (next < player.Bids.Length)
@@ -528,11 +529,10 @@ namespace OhHell.Core
       {
         // Sum the bids for each round less than the current round (Game.Round)
         var round = 0;
+        // Zero the score and statistic properties
+        player.Score = player.BidTotal = player.PointsFromTricks = player.SetCount = 0;
         foreach (var bid in player.Bids)
         {
-          // Zero the score if this is the first round
-          if (round == 0)
-            player.Score = 0;
           // Show the bid for the current round and scores for rounds prior to
           // the current round.
           bid.TextIsEmpty = round > Round;
@@ -540,7 +540,10 @@ namespace OhHell.Core
           // Only sum the score for rounds prior to the current round.  The game
           // is over when Round is equal to the total number of rounds.
           if (round < Round)
+          {
             player.Score += bid.CalculateScore();
+            player.UpdateStats(bid);
+          }
           // Keeps the total score for this round up to date so items bound to
           // this bid will display the correct value
           bid.Score = player.Score;
