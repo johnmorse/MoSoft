@@ -1,0 +1,70 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+# These are manually entered so ignore auto detection
+discovery:
+  ignore:
+    - directv
+    - samsung_tv
+    - yamaha
+
+media_player: !include configs/media_players.yaml
+
+#!include configs/arlo.yaml
+
+sensor:
+  - platform: ring
+  - platform: arlo
+
+camera:
+  - platform: ring
+  - platform: arlo
+
+binary_sensor:
+  - platform: ring
+#  - platform: arlo
+
+# Ring doorbell
+ring:
+  username: !secret ring_username
+  password: !secret ring_password
+
+# Arlo account information
+arlo:
+  username: !secret arlo_username
+  password: !secret arlo_password
+
+# Arlo control panel
+alarm_control_panel:
+  - platform: arlo
+
+# Asus Router access
+asuswrt:
+  host: !secret asus_router_ip
+  username: !secret asus_username
+  password: !secret asus_password
+  sensors:
+    - upload_speed
+    - download_speed
+
+# Asus router device tracker
+# Device list can be found in known_devices.yaml
+# Devices:
+#   Hollys-S10
+#   Johns-S10
+#   Zacks-Pixel
+device_tracker:
+  - platform: asuswrt
+    track_new_devices: true
+    hide_if_away: false
+    consider_home: 90
+    interval_seconds: 30

@@ -1,0 +1,13 @@
+'1565847838201':
+  alias: Good Night Holly
+  sequence:
+  - alias: Turn bedroom lights off
+    data:
+      entity_id: switch.bedroom
+    service: switch.turn_off
+  - data:
+      entity_id: switch.sconce
+    service: switch.turn_off
+  - data:
+      entity_id: media_player.bedroom_tv
+    service: media_player.turn_off

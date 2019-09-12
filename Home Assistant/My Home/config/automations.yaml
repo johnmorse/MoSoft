@@ -1,0 +1,87 @@
+- id: '1568262606053'
+  alias: Turn downstairs lights off at night after on for 5 minutes
+  trigger:
+  - entity_id: switch.kitchen
+    for: 00:05:00
+    from: 'off'
+    platform: state
+    to: 'on'
+  - entity_id: switch.island
+    for: 00:05:00
+    from: 'off'
+    platform: state
+    to: 'on'
+  - entity_id: switch.table
+    for: 00:05:00
+    from: 'off'
+    platform: state
+    to: 'on'
+  - entity_id: switch.stairs
+    for: 00:05:00
+    from: 'off'
+    platform: state
+    to: 'on'
+  - entity_id: light.family_room
+    for: 00:05:00
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - after: 01:01:00
+    before: 07:01:00
+    condition: time
+  action:
+  - data:
+      entity_id: group.night_lights_to_turn_off
+    service: switch.turn_off
+  - data:
+      entity_id: light.family_room
+    service: light.turn_off
+- id: '1568263922261'
+  alias: Fan off when family room light goes on
+  trigger:
+  - entity_id: light.family_room
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: switch.fan
+    service: switch.turn_off
+- id: '1568264064887'
+  alias: Family room off when fan goes on
+  trigger:
+  - entity_id: switch.fan
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: light.family_room
+    service: light.turn_off
+- id: '1568264315235'
+  alias: Lights on 30 minutes before sunset
+  trigger:
+  - event: sunset
+    offset: -00:03:00
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: group.night_lights
+    service: switch.turn_on
+- id: '1568264473606'
+  alias: Lights off at 1AM
+  trigger:
+  - at: 01:00:00
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: light.family_room
+    service: light.turn_off
+  - data:
+      entity_id: group.night_lights_to_turn_off
+    service: switch.turn_off

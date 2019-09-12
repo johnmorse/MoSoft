@@ -1,0 +1,61 @@
+  phones:
+    name: Phones
+    entities:
+      - binary_sensor.holly_s_s10_presence
+      - binary_sensor.john_morse_s_john_s_s10_presence
+      - device_tracker.3c_28_6d_fb_c2_d6
+  night_lights:
+    name: Night lights
+    entities:
+      - switch.lamp_north
+      - switch.lamp_south
+      - switch.lamp_east
+      - switch.porch
+  night_lights_to_turn_off:
+    name: Night lights to trun off
+    entities:
+      - switch.chandelier
+      - switch.cupboards
+      - switch.east_outlet
+      - switch.fan
+      - switch.garage
+      - switch.gazebo
+      - switch.island
+      - switch.kitchen
+      - switch.lamp_east
+      - switch.lamp_north
+      - switch.lamp_south
+      - switch.office_hall
+      - switch.outlet_3
+      - switch.outlet_6
+      - switch.porch
+      - switch.sconce
+      - switch.stairs
+      - switch.table
+  all_light_switches:
+    name: All light switches
+    entities:
+      - switch.bedroom
+      - switch.bedroom_fan
+      - switch.bonus_lamp
+      - switch.chandelier
+      - switch.christmas
+      - switch.cupboards
+      - switch.east_outlet
+      - switch.fan
+      - switch.garage
+      - switch.gazebo
+      - switch.island
+      - switch.kitchen
+      - switch.lamp_east
+      - switch.lamp_north
+      - switch.lamp_south
+      - switch.office_hall
+      - switch.outlet_3
+      - switch.outlet_6
+      - switch.porch
+      - switch.sconce
+      - switch.stairs
+      - switch.table
+      - switch.tree
+    

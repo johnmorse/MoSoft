@@ -1,0 +1,44 @@
+# DirecTv
+  - platform: directv
+    host: 192.168.1.51
+    port: 8080
+    name: Genie
+    device: 0
+  - platform: directv
+    host: 192.168.1.51
+    port: 8080
+    name: 4K DirecTV
+    device: D42C0F1E6D08
+  - platform: directv
+    host: 192.168.1.51
+    port: 8080
+    name: Bedroom DirecTV
+    device: CC03FA23295A
+# Yamaha RX-A860
+  - platform: yamaha
+    host: 192.168.1.254
+    name: "Yamaha Amp"
+    source_names:
+      HDMI1: "BD Player"
+      HDMI2: "Set Top Box"
+      HDMI3: "DIRECTV GENIE"
+      HDMI4: "Fire TV Cube"
+    zone_names:
+      Main_Zone: "Family Room"      
+# Samsung Q8 Series (75) QN75Q8FNB
+  - platform: samsungtv
+    host: 192.168.1.55
+    port: 8001
+    mac: 64:1C:AE:63:AA:C6
+    name: "Family Room TV"
+# Samsung 65" 9 Series in Master Bedroom
+  - platform: samsungtv
+    host: 192.168.1.42
+    port: 8001
+    mac: C0:97:27:05:58:6C
+    name: "Bedroom TV"
+# Sharp Aquos 70
+  - platform: aquostv
+    host: 192.168.1.7
+    power_on_enabled: true
+    name: "Bonus TV"

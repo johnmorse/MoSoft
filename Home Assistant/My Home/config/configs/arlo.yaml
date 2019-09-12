@@ -1,0 +1,18 @@
+# Arlo account information
+arlo:
+  username: !secret arlo_username
+  password: !secret arlo_password
+
+# Arlo sensor information
+sensor:
+  - platform: arlo
+    monitored_conditions:
+      - captured_today
+      - last_capture
+      - total_cameras
+      - battery_level
+      - signal_strength
+
+# Arlo control panel
+alarm_control_panel:
+  - platform: arlo
